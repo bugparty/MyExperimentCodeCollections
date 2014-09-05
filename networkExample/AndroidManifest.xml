@@ -27,6 +27,8 @@
         </activity>
         <activity android:name=".BRGetDnsExample2">
         </activity>
+        <activity android:name=".WebApiGetSystemInfoExample">
+        </activity>
 
     </application>
 

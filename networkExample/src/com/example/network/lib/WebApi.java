@@ -99,4 +99,25 @@ public class WebApi {
         client2.post();
         return client2.getResponseJson();
     }
+    public JSONObject getStatusInfo(){
+
+        BRCookie cookie = new BRCookie();
+        cookie.setNameValue(loginHeader.toString());
+        Uri uri;
+        uri = new Uri.Builder().scheme("http")
+                .authority("x.du").appendEncodedPath(cookie.getPath())
+                .appendPath(";stok="+cookie.getStok())
+                .appendEncodedPath("admin/private/get_status_info?cap=1&version=1&cpu_core=1&uptime=1&device_num=1&mac=1&disk_info=1")
+                .build();
+        Log.d(TAG, "URI builded "+uri.toString());
+        MyRequestBuilder client2 = new MyRequestBuilder();
+        client2.setHeader(loginHeader);
+        client2.setUrl(uri.toString());
+        client2.params
+                .add("username", "root")
+                .add("bd_web", "1")
+                .add("password", this.password);
+        client2.post();
+        return client2.getResponseJson();
+    }
 }

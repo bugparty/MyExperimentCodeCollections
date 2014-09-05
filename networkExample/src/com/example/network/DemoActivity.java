@@ -50,7 +50,10 @@ public class DemoActivity extends android.app.ListActivity {
         obj.put("title","Baidu Router GetSystenInfo Demo(using WebApi");
         obj.put("class",BRGetDnsExample2.class);
         list.add(obj);
-
+        obj = new HashMap<String, Object>();
+        obj.put("title","Baidu Router GetStatusInfo Demo(using WebApi");
+        obj.put("class",WebApiGetSystemInfoExample.class);
+        list.add(obj);
 
         return list;
 
